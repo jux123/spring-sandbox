@@ -13,9 +13,9 @@ docker run -p 5432:5432 -e POSTGRES_USER=sandbox_user -e POSTGRES_PASSWORD=pass 
 ## Run App
 
 ## Gradle commands
-Show which tasks get run \n
+Show which tasks get run <br>
 `./gradlew --console verbose build`
 
-Show all tasks for project \n
+Show all tasks for project <br>
 `./gradlew tasks`
 
