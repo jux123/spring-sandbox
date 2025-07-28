@@ -11,6 +11,9 @@ docker run -p 5432:5432 -e POSTGRES_USER=sandbox_user -e POSTGRES_PASSWORD=pass 
 ```
 
 ## Run App
+Run with gradle <br>
+`./gradlew bootRun` <br>
+`./gradlew bootRun --args='--spring.profiles.active=dev'`
 
 ## Gradle commands
 Show which tasks get run <br>
@@ -19,3 +22,9 @@ Show which tasks get run <br>
 Show all tasks for project <br>
 `./gradlew tasks`
 
+Show dependencies <br>
+`./gradlew dependencies`
+
+
+## OpenAPI UI
+`http://localhost:8080/swagger-ui/index.html`

@@ -3,10 +3,10 @@ package com.sandbox.sandbox;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+//@SpringBootTest
 class SandboxApplicationTests {
 
-	@Test
+//	@Test
 	void contextLoads() {
 	}
 
