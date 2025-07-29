@@ -1,4 +1,6 @@
 package com.sandbox.domain;
 
-public record Account(String accountId, String name, String email, AccountType accountType) {
+import java.util.UUID;
+
+public record Account(UUID id, String name, String email, AccountType accountType) {
 }

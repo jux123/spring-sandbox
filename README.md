@@ -13,7 +13,10 @@ docker run -p 5432:5432 -e POSTGRES_USER=sandbox_user -e POSTGRES_PASSWORD=pass 
 ## Run App
 Run with gradle <br>
 `./gradlew bootRun` <br>
-`./gradlew bootRun --args='--spring.profiles.active=dev'`
+`./gradlew bootRun --args='--spring.profiles.active=dev'` <br>
+Note that with Spring Boot devTools dependency, the application will restart itself when code changes. <br>
+TODO: check how it works only on localhost and not final build
+
 
 ## Gradle commands
 Show which tasks get run <br>
