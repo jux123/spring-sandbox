@@ -1,6 +1,16 @@
 spring:
   application:
     name: sandbox
+  datasource:
+    url: jdbc:postgresql://localhost:5432/cdr
+    username: cdr_user
+    password: pass
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 5
+      minimum-idle: 2
+      idle-timeout: 30000
+      pool-name: CdrHikariCP
 
 springdoc:
   swagger-ui:

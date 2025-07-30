@@ -7,16 +7,28 @@ https://start.spring.io/#!type=gradle-project-kotlin&language=java&platformVersi
 
 ## Run DB
 ```
-docker run -p 5432:5432 -e POSTGRES_USER=sandbox_user -e POSTGRES_PASSWORD=pass -e POSTGRES_DB=sandbox postgres:17.2-alpine
+docker run -p 15432:5432 -e POSTGRES_USER=cdr_user -e POSTGRES_PASSWORD=pass -e POSTGRES_DB=cdr postgres:17.2-alpine
+```
+With persistant tables
+```
+docker run --name cdr-postgres \
+    -p 5432:5432 \
+    -e POSTGRES_USER=cdr_user \
+    -e POSTGRES_PASSWORD=pass \
+    -e POSTGRES_DB=cdr \
+    -v /home/juhan/.local/share/postgresql/cdr/data:/var/lib/postgresql/data \
+    -d postgres:17.2-alpine
 ```
 
 ## Run App
 Run with gradle <br>
 `./gradlew bootRun` <br>
-`./gradlew bootRun --args='--spring.profiles.active=dev'` <br>
-Note that with Spring Boot devTools dependency, the application will restart itself when code changes. <br>
+`./gradlew bootRun --args='--spring.profiles.active=local'` <br>
+Note that with Spring Boot devTools dependency, the application will restart (reloads spring context) itself when code changes. <br>
 TODO: check how it works only on localhost and not final build
 
+Alternatively you can run so, which will build rebuild and restart jvm on every file change which is more reliable especially with AOT compilation <br>
+`./gradlew bootRun -t` <br>
 
 ## Gradle commands
 Show which tasks get run <br>

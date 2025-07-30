@@ -1,0 +1,5 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:15432/cdr
+    username: cdr_user
+    password: pass
