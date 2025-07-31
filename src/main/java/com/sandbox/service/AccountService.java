@@ -20,8 +20,8 @@ public class AccountService {
 
     public AccountDto createAccount(AccountDto accountDto) {
         Account account = new Account(null, accountDto);
-        accountRepository.save(account);
-        return new AccountDto(account);
+        Account savedAccount = accountRepository.save(account);
+        return new AccountDto(savedAccount);
     }
 
     public AccountDto getAccountById(UUID id) {
