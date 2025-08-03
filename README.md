@@ -43,3 +43,15 @@ Show dependencies <br>
 
 ## OpenAPI UI
 `http://localhost:8080/swagger-ui/index.html`
+
+
+## Testing
+
+### Integration tests
+Integration tests are run with Testcontainers, which requires Docker to be running. <br>
+
+Run integration tests with <br>
+`./gradlew test -PintegrationTest=true`
+
+Regular tests are run with, that skip slow integration tests <br>
+`./gradlew test`

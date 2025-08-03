@@ -45,3 +45,19 @@ dependencies {
 tasks.withType<Test> {
 	useJUnitPlatform()
 }
+
+tasks.test {
+	val integrationTest: String = (findProperty("integrationTest")?: "") as String
+
+	if (!integrationTest.toBoolean()) {
+		useJUnitPlatform {
+			excludeTags("integration")
+		}
+	}
+
+	testLogging {
+		events("passed", "skipped", "failed")
+//		showStandardStreams = true
+	}
+
+}
