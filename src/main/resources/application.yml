@@ -15,3 +15,10 @@ spring:
 springdoc:
   swagger-ui:
     path: /swagger-ui.html
+
+logging:
+  level:
+    org.springframework.web: DEBUG
+    org.springframework.boot.autoconfigure.web: DEBUG
+    org.springframework.jdbc: DEBUG
+    com.sandbox: DEBUG
